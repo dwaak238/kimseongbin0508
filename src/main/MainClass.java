@@ -2,28 +2,24 @@ package main;
 import java.util.Random;
 import java.util.*;
 
+import game.GameStart;
 import game.TheDal;
 
 public class MainClass {
 
 	public static void main(String[] args) {
 		
+		GameStart.start();
 		
-		TheDal td = new TheDal();
-		td.menu();
-		td.matter();
-		td.compare(0);
+		
+//		TheDal td = new TheDal();
+//		td.menu();
+//		td.matter(10); // 문제 수 넣기
+//		td.compare(0);
+//		td.ShowOX();
 		
 		
 //		for (;;) {
-//			Random rnd = new Random();
-//			int a = rnd.nextInt(10) + 10;
-//			int b = rnd.nextInt(10) + 10;
-//			
-//			int c = a + b;
-//			int d = a - b;
-//			int e = a * b;
-//			float f = a / b;
 //			
 //			Scanner scan = new Scanner(System.in);
 //			System.out.print("1: 더하기, 2:빼기, 3:곱하기, 4:나누기 0: 종료 >> ");

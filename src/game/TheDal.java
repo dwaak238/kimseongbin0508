@@ -10,6 +10,8 @@ public class TheDal {
 	private Scanner sc;
 	private NumVO numVo;
 	private int op; // 더하기 빼기 곱하기 나누기를 정하는 변수
+	private int o;
+	private int x;
 	
 	
 //	private int num1;
@@ -33,10 +35,11 @@ public class TheDal {
 //	}
 	
 	// 메뉴 출력
-	public void menu() {
+	public int menu() {
 		System.out.print("1: 더하기, 2:빼기, 3:곱하기, 4:나누기, 0:종료 >> ");
 		op = sc.nextInt();
 		System.out.println("당신이 선택한 번호 = " + op);
+		return op;
 	}
 	
 	// 랜덤 숫자 만들기 매소드
@@ -50,7 +53,8 @@ public class TheDal {
 	}
 	
 	// 문제 만들기
-	public void matter() {
+	public void matter(int mSu) {
+		for (int i = 0; i < mSu; i++) {
 		// 문제 출력
 		rNum(); // 랜덤 숫자 만들기 매소드
 		
@@ -71,6 +75,7 @@ public class TheDal {
 			compare(dab);
 			}
 	}
+}
 	
 	// 빼기 또는 나누기일때 num1과 num2를 바꾸는 매소드
 	public void change(int a, int b) {
@@ -99,10 +104,18 @@ public class TheDal {
 		// 맞으면 정답 틀리면 오답
 		if (i == dab) {
 			System.out.println("정답입니다.");
+			o++; // 맞은 갯수
 		}
 		else {
 			System.out.println("오답입니다.");
+			x++; // 틀린 갯수
 		}
+	}
+	
+	// 맞은 갯수 틀린 갯수 출력 하기
+	public void ShowOX() {
+		System.out.println("정답수 : " + o);
+		System.out.println("오답수 : " + x);
 	}
 
 	// 더하기
